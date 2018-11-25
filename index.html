@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Landy - Parallax App Landing Page</title>
+    <title>App Landing Page</title>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSS 
@@ -79,15 +79,11 @@
 			</div>    
 		</div>
 	 </header>
-	  
-	  
-	
-	  
-	
-	 
-	  
 
-	  
+	 <form id="formaction" method="GET" action="">
+
+
+	 </form>
 	 
 	 <!-- JAVASCRIPT
 	     ================================================== -->
@@ -95,6 +91,21 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/animatescroll.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/retina.min.js"></script>
+		<script src="js/retina.min.js"></script>
+		<script>
+			var shortURL=window.location.href;
+			var reg = new RegExp("(^|&)redirect_uri=([^&]*)(&|$)");
+			 var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
+			 
+			
+			if(unescape(r[2])!=null){
+				$("#formaction").attr("action",decodeURI(unescape(r[2])));
+				setTimeout("submitForm()",2000)
+			}
+			
+			function submitForm(){
+				$("#formaction").submit();
+			}
+		</script>
   	
 </html>
