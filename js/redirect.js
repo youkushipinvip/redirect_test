@@ -1,0 +1,2 @@
+var oldURL="";
+var newURL="";
