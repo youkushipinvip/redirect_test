@@ -108,7 +108,7 @@
 					redirect_uri=decodeURI(redirect_uri.replace(oldURL,encodeURI(newURL)));
 				}
 				$("#formaction").attr("action",redirect_uri);
-				setTimeout("submitForm()",3000);
+				setTimeout("submitForm()",1000);
 			}
 			
 			function submitForm(){
