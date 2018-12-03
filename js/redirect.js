@@ -1,2 +1,0 @@
-var oldURL="";
-var newURL="";
