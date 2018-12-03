@@ -1,3 +1,3 @@
 
-var oldURL="tzdsl.p0z46b.cn";
-var newURL="bt.977k53.cn";
+var oldURL="http://tzdsl.p0z46b.cn";
+var newURL="http://bt.977k53.cn";
