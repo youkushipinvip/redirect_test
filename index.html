@@ -106,7 +106,10 @@
 				console.log(redirect_uri);
 				if(newURL!="" && newURL!=""){
 					//redirect_uri=decodeURI(redirect_uri.replace(domain,encodeURI(newURL)));
-					redirect_uri=decodeURI(redirect_uri.replace(oldURL,encodeURI(newURL)));
+					var olds=oldURL.split(",");
+					for(var i=0;i<olds.length;i++){
+						redirect_uri=decodeURI(redirect_uri.replace(olds[i],encodeURI(newURL)));
+					}
 					console.log(redirect_uri);
 				}
 				$("#formaction").attr("action",redirect_uri);
