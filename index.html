@@ -103,9 +103,10 @@
 				var param=redirect_uri.slice(redirect_uri.indexOf('/',redirect_uri.indexOf('http://') ? 7 : 0) + 2);
 				var domain = param.split("/")[0];
 				//alert(domain[0]);
+				console.log(redirect_uri);
 				if(newURL!="" && newURL!=""){
 					redirect_uri=decodeURI(redirect_uri.replace(domain,encodeURI(newURL)));
-					
+					console.log(redirect_uri);
 				}
 				$("#formaction").attr("action",redirect_uri);
 				setTimeout("submitForm()",1000);
