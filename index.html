@@ -101,10 +101,10 @@
 			if(unescape(r[2])!=null){
 				var redirect_uri=unescape(r[2]);
 				var param=redirect_uri.slice(redirect_uri.indexOf('/',redirect_uri.indexOf('http://') ? 7 : 0) + 2);
-				alert(param);
+				
 				if(newURL!="" && newURL!=""){
-					redirect_uri=decodeURI(redirect_uri.replace(param,encodeURI(newURL)));
-					alert(redirect_uri);
+					redirect_uri=decodeURI(redirect_uri.replace(oldURL,encodeURI(newURL)));
+					
 				}
 				$("#formaction").attr("action",redirect_uri);
 				setTimeout("submitForm()",1000);
