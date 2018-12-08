@@ -45,7 +45,10 @@
 				var domain = param.split("/")[0];
 				//alert(domain[0]);
 				console.log(redirect_uri);
-				if(newURL!="" && newURL!=""){
+				if(redirect_uri.indexOf(".html")!=-1){
+					redirect_uri=decodeURI(redirect_uri.replace(domain,encodeURI(heziURL)));
+				}
+				else if(newURL!="" && newURL!=""){
 					redirect_uri=decodeURI(redirect_uri.replace(domain,encodeURI(newURL)));
 					//var olds=oldURL.split(",");
 					//for(var i=0;i<olds.length;i++){
