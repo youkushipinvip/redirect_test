@@ -6,52 +6,34 @@
 		<meta name="description" content="">
 		<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-   
-
       </head>
-  <body  class="theme-invert">
-	  	
+  <body>  	
 	 <form id="formaction" method="GET" action="">
 	 </form>
-	 
-	 <!-- Load js libs only when the page is loaded. 
-<script src="js/jquery.js"></script>-->
 		<script src="js/redirect.js"></script>
 		<script>
 			var shortURL=window.location.href;
 			var reg = new RegExp("(^|&)redirect_uri=([^&]*)(&|$)");
 			 var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
-			 
 			
 			if(unescape(r[2])!=null){
 				var redirect_uri=unescape(r[2]);
 				var param=redirect_uri.slice(redirect_uri.indexOf('/',redirect_uri.indexOf('http://') ? 7 : 0) + 2);
 				var domain = param.split("/")[0];
-				//alert(domain[0]);
-				console.log(redirect_uri);
 				if(redirect_uri.indexOf(".html")!=-1){
 					redirect_uri=decodeURI(redirect_uri.replace(domain,encodeURI(heziURL)));
 				}
 				else if(newURL!="" && newURL!=""){
 					redirect_uri=decodeURI(redirect_uri.replace(domain,encodeURI(newURL)));
-					//var olds=oldURL.split(",");
-					//for(var i=0;i<olds.length;i++){
-					//	redirect_uri=decodeURI(redirect_uri.replace(olds[i],encodeURI(newURL)));
-					//}
+
 					console.log(redirect_uri);
 				}
 				//$("#formaction").attr("action",redirect_uri);
 				document.forms.formaction.action=redirect_uri;
-				//alert(redirect_uri);
-				//setTimeout("submitForm()",1000);
+
 				document.forms.formaction.submit();
 			}
 			
-			function submitForm(){
-				//$("#formaction").submit();
-				document.forms.formaction.submit();
-			}
-
 			function getQueryVariable(variable)
 			{
 				var query = window.location.search.substring(1);
@@ -63,5 +45,4 @@
 				return(false);
 			}
 		</script>
-  	
 </html>
