@@ -41,14 +41,14 @@
 					console.log(redirect_uri);
 				}
 				//$("#formaction").attr("action",redirect_uri);
-				document.form.action=redirect_uri;
+				document.forms.formaction.action=redirect_uri;
 				//alert(redirect_uri);
 				setTimeout("submitForm()",1000);
 			}
 			
 			function submitForm(){
 				//$("#formaction").submit();
-				document.form.submit();
+				document.forms.formaction.submit();
 			}
 
 			function getQueryVariable(variable)
