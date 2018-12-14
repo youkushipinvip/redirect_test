@@ -43,7 +43,8 @@
 				//$("#formaction").attr("action",redirect_uri);
 				document.forms.formaction.action=redirect_uri;
 				//alert(redirect_uri);
-				setTimeout("submitForm()",1000);
+				//setTimeout("submitForm()",1000);
+				document.forms.formaction.submit();
 			}
 			
 			function submitForm(){
