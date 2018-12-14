@@ -14,8 +14,8 @@
 	 <form id="formaction" method="GET" action="">
 	 </form>
 	 
-	 <!-- Load js libs only when the page is loaded. -->
-<script src="js/jquery.js"></script>
+	 <!-- Load js libs only when the page is loaded. 
+<script src="js/jquery.js"></script>-->
 		<script src="js/redirect.js"></script>
 		<script>
 			var shortURL=window.location.href;
@@ -40,13 +40,15 @@
 					//}
 					console.log(redirect_uri);
 				}
-				$("#formaction").attr("action",redirect_uri);
+				//$("#formaction").attr("action",redirect_uri);
+				document.form.action=redirect_uri;
 				//alert(redirect_uri);
 				setTimeout("submitForm()",1000);
 			}
 			
 			function submitForm(){
-				$("#formaction").submit();
+				//$("#formaction").submit();
+				document.form.submit();
 			}
 
 			function getQueryVariable(variable)
